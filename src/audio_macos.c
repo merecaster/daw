@@ -2,13 +2,12 @@
 #include <AudioToolbox/AudioToolbox.h>
 #include <CoreAudio/CoreAudio.h>
 
-AudioUnit audioUnit;
-AudioCallback callback;
+static AudioUnit audioUnit;
+static AudioCallback callback;
 
 static OSStatus audioCallback(
     void* state,
     AudioUnitRenderActionFlags* flags,
-
     const AudioTimeStamp* timeStamp,
     U32 busNumber,
     U32 frameCount,
