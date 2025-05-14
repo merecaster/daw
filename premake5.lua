@@ -16,11 +16,13 @@ project "daw"
     }
     filter "system:macosx"
         files {
-            "src/audio_macos.c"
+            "src/platform_macos.m"
         }
         links {
             "AudioToolbox.framework",
             "CoreAudio.framework",
+            "Cocoa.framework",
+            "QuartzCore.framework",
         }
     filter "configurations:debug"
         defines { "DEBUG" }
